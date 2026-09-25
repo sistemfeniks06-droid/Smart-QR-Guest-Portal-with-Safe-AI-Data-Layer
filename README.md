@@ -54,17 +54,20 @@ To ensure mobile AI agents (such as Google Gemini, ChatGPT web browsing, or Siri
     "name": "Today's Special Offer"
   }
 }
+
 🛠️ Tech Stack
 Frontend: HTML5, Tailwind CSS (via CDN), FontAwesome icons, Canvas Confetti.
 Backend & Database: Firebase Firestore (NoSQL for dynamic tenant routing), Firebase Hosting.
 AI Infrastructure: JSON-LD / Schema.org structured metadata layer with security constraints.
 Design Framework: iOS Dynamic Island UI, Glassmorphism backdrop filters, and dark mode mesh gradients.
-🚀 Deployment & Local Setup
+
+Deployment & Local Setup
 1. Clone Repository
 code
 Bash
 git clone https://github.com/sistemfeniks06-droid/Smart-QR-Guest-Portal-with-Safe-AI-Data-Layer.git
 cd Smart-QR-Guest-Portal-with-Safe-AI-Data-Layer
+
 2. Run Locally
 Open index.html directly in any web browser, or start a local web server:
 code
@@ -79,6 +82,4 @@ This project was developed following the Orient → Plan → Build → Transfer 
 Orient: Identified friction points in hospitality QR code maintenance and AI agent access safety.
 Plan: Architecture mapped for single-page iOS glassmorphism UI paired with Firestore NoSQL client lookup and structured JSON-LD AI limits.
 Build: Implemented full dynamic routing, feedback branching, and accessible ARIA labels.
-Transfer: Deployed live on Firebase Hosting and open-sourced on GitHub with comprehensive documentation.
-code
-Code
+Transfer: Deployed live on Firebase Hosting and open-sourced on GitHub with comprehensive documentati
