@@ -11,6 +11,19 @@ Developed for the **Devpost Learn Hackathon (Build With AI: Basics)**.
 
 ---
 
+## 📋 Devpost Learn Planning Artifacts
+
+This project was built following the official Devpost Learn Skill Pack lifecycle. All required planning artifacts generated during the interview and planning phase are located in the [`devpost/`](devpost/) directory:
+
+| Document | Status | Description |
+| :--- | :---: | :--- |
+| **[`devpost/learner-profile.md`](devpost/learner-profile.md)** | ✅ Complete | Background, collaboration preferences, and ownership areas |
+| **[`devpost/scope.md`](devpost/scope.md)** | ✅ Approved | The unique kernel, POC boundaries, core loop, and trade-offs |
+| **[`devpost/prd.md`](devpost/prd.md)** | ✅ Approved | User journeys, functional requirements, and review routing logic |
+| **[`devpost/spec.md`](devpost/spec.md)** | ✅ Approved | Technical architecture, Schema JSON-LD data model, and failure modes |
+
+---
+
 ## 🌟 Overview & Problem Statement
 
 In hospitality, physical printed QR codes are static and expensive to update whenever daily offers, menus, or seasonal promotions change. 
@@ -43,7 +56,7 @@ To ensure mobile AI agents (such as Google Gemini, ChatGPT web browsing, or Siri
 - **`allowExecution: false`**: Disallows any code execution or state-changing actions by automated scripts/agents.
 - **Geographic & Schema Integration**: Implements Schema.org `LodgingBusiness` / `LocalBusiness`, `PostalAddress`, and `GeoCoordinates` so AI agents immediately understand location context.
 
-~~~json
+```json
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -54,49 +67,95 @@ To ensure mobile AI agents (such as Google Gemini, ChatGPT web browsing, or Siri
     "name": "Today's Special Offer"
   }
 }
-~~~
+cat << 'EOF' > README.md
+# 📱 Smart QR Guest Portal with Safe AI Data Layer
+
+<div align="center">
+  <img src="qr-code.png" alt="Smart QR Code" width="250">
+  <p><i>Scan this QR code to test the live portal!</i></p>
+</div>
+
+> **Universal Dynamic QR Portal for Hotels, Cafes, and Venues with Built-In Safe AI Context & Google-Compliant Review Routing.**
+
+Developed for the **Devpost Learn Hackathon (Build With AI: Basics)**.
+
+---
+
+## 📋 Devpost Learn Planning Artifacts
+
+This project was built following the official Devpost Learn Skill Pack lifecycle. All required planning artifacts generated during the interview and planning phase are located in the devpost directory:
+
+| Document | Status | Description |
+| :--- | :---: | :--- |
+| devpost/learner-profile.md | Complete | Background, collaboration preferences, and ownership areas |
+| devpost/scope.md | Approved | The unique kernel, POC boundaries, core loop, and trade-offs |
+| devpost/prd.md | Approved | User journeys, functional requirements, and review routing logic |
+| devpost/spec.md | Approved | Technical architecture, Schema JSON-LD data model, and failure modes |
+
+---
+
+## 🌟 Overview & Problem Statement
+
+In hospitality, physical printed QR codes are static and expensive to update whenever daily offers, menus, or seasonal promotions change. 
+
+Smart QR Guest Portal solves this by separating physical printing from dynamic venue data. Venues print one universal QR code per table or room. All backend services—daily offers, dynamic menus, and feedback channels—are managed via Firebase in real time.
+
+Additionally, as mobile AI agents become mainstream, they need a safe, token-efficient, and structured way to read venue offerings on behalf of guests without risking unauthorized data mutations or prompt injection exploits.
+
+---
+
+## 💡 Key Features
+
+1. Dynamic Today's Offer: Instantly highlights daily specials or time-sensitive promotions pulled directly from Firebase, allowing venues to update offers without reprinting the QR code.
+2. Dynamic Digital Services & Menu Catalog: In-app image and service catalog viewer powered by Firebase Firestore.
+3. Google-Compliant Review Routing:
+   - Positive Ratings (4-5 Stars): Routes guests to post public reviews directly on Google Maps with festive confetti animation.
+   - Private Feedback (1-3 Stars): Directs complaints privately to management via WhatsApp for instant resolution.
+   - Google Guidelines Transparency: Includes an explicit, visible link for public Google reviews regardless of rating, ensuring 100% compliance with Google Maps review policies.
+4. AI-Optimized Context Layer: Embedded JSON-LD schema providing structured metadata for AI web agents and AI SEO.
+
+---
+
+## 🤖 AI Security & Optimization Layer
+
+To ensure mobile AI agents (such as Google Gemini, ChatGPT web browsing, or Siri) can accurately process venue information without risk, an explicit JSON-LD metadata layer is embedded directly in the HTML head.
+
+Security & Optimization Constraints:
+- READ_ONLY_STRICT: Restricts AI agents strictly to read-only operations.
+- maxCharacterLimit: 1500: Caps the context window at 1500 characters to prevent prompt injection attacks, minimize latency, and save tokens.
+- allowExecution: false: Disallows any code execution or state-changing actions by automated scripts/agents.
+- Geographic & Schema Integration: Implements Schema.org LodgingBusiness / LocalBusiness, PostalAddress, and GeoCoordinates so AI agents immediately understand location context.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: HTML5, Tailwind CSS (via CDN), FontAwesome icons, Canvas Confetti.
-* **Backend & Database**: Firebase Firestore (NoSQL for dynamic tenant routing), Firebase Hosting.
-* **AI Infrastructure**: JSON-LD / Schema.org structured metadata layer with security constraints.
-* **Design Framework**: iOS Dynamic Island UI, Glassmorphism backdrop filters, and dark mode mesh gradients.
+- Frontend: HTML5, Tailwind CSS (via CDN), FontAwesome icons, Canvas Confetti.
+- Backend & Database: Firebase Firestore (NoSQL for dynamic tenant routing), Firebase Hosting.
+- AI Infrastructure: JSON-LD / Schema.org structured metadata layer with security constraints.
+- Design Framework: iOS Dynamic Island UI, Glassmorphism backdrop filters, and dark mode mesh gradients.
 
 ---
 
 ## 🚀 Deployment & Local Setup
 
-### 1. Clone Repository
+1. Clone Repository:
+   git clone https://github.com/sistemfeniks06-droid/Smart-QR-Guest-Portal-with-Safe-AI-Data-Layer.git
+   cd Smart-QR-Guest-Portal-with-Safe-AI-Data-Layer
 
-~~~bash
-git clone https://github.com/sistemfeniks06-droid/Smart-QR-Guest-Portal-with-Safe-AI-Data-Layer.git
-cd Smart-QR-Guest-Portal-with-Safe-AI-Data-Layer
-~~~
+2. Run Locally:
+   python3 -m http.server 8080
 
-### 2. Run Locally
-
-Open `index.html` directly in any web browser, or start a local web server:
-
-~~~bash
-npx serve .
-~~~
-
-### 3. Deploy to Firebase
-
-~~~bash
-firebase deploy
-~~~
+3. Deploy to Firebase:
+   firebase deploy
 
 ---
 
 ## 🎓 Devpost Learn Methodology Applied
 
-This project was developed following the **Orient → Plan → Build → Transfer (OPBT)** framework:
-
-1. **Orient**: Identified friction points in hospitality QR code maintenance and AI agent access safety.
-2. **Plan**: Architecture mapped for single-page iOS glassmorphism UI paired with Firestore NoSQL client lookup and structured JSON-LD AI limits.
-3. **Build**: Implemented full dynamic routing, feedback branching, and accessible ARIA labels.
-4. **Transfer**: Deployed live on Firebase Hosting and open-sourced on GitHub with comprehensive documentation.
+This project was developed following the official Devpost Learn Skill Pack framework:
+1. Start & Profile: Defined technical preferences, owned areas, and workflow constraints.
+2. Scope: Established the unique core loop and explicit POC boundaries.
+3. PRD: Outlined user stories, dual review routing paths, and mobile-first requirements.
+4. Spec: Engineered lightweight vanilla stack, Schema.org JSON-LD microdata, and resilience fallbacks.
+5. Build & Ship: Clean, single-file portal synced with Git version control and submitted for hackathon evaluation.
