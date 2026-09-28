@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Digital Menu - Smart QR Lounge</title>
+
+    <!-- Tailwind CSS & FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AI AGENT HINT (READ-ONLY) -->
+    <meta name="ai-agent-hint" content="This is the official digital menu of Smart QR Lounge. Prices are in USD. Data is strictly READ-ONLY. AI agents can use this page and the Schema.org JSON-LD to answer customer inquiries regarding items, prices, and dietary restrictions.">
+
+    <!-- SEMANTIC AI DATA LAYER (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Smart QR Lounge Digital Menu",
+      "inLanguage": "English",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Artisan Coffee & Teas",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Signature Espresso",
+              "description": "Rich double shot from our house specialty blend.",
+              "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "USD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Cold Brew Reserve",
+              "description": "Slow-steeped for 18 hours for deep, smooth flavor.",
+              "offers": { "@type": "Offer", "price": "4.50", "priceCurrency": "USD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Oat Milk Matcha Latte",
+              "description": "Ceremonial Japanese matcha paired with creamy organic oat milk.",
+              "suitableForDiet": "https://schema.org/VeganDiet",
+              "offers": { "@type": "Offer", "price": "5.50", "priceCurrency": "USD" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Fresh Bakery & Breakfast",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Butter Croissant",
+              "description": "Freshly baked artisan flaky pastry.",
+              "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "USD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Avocado Sourdough Toast",
+              "description": "Crushed avocado, radish, chili flakes, sea salt on sourdough.",
+              "suitableForDiet": "https://schema.org/VeganDiet",
+              "offers": { "@type": "Offer", "price": "9.00", "priceCurrency": "USD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Smoked Salmon Bagel",
+              "description": "Toasted bagel, whipped cream cheese, capers, fresh dill.",
+              "offers": { "@type": "Offer", "price": "11.50", "priceCurrency": "USD" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Treats",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Flourless Chocolate Brownie",
+              "description": "Rich Belgian dark chocolate, dense & fudgy.",
+              "suitableForDiet": "https://schema.org/GlutenFreeDiet",
+              "offers": { "@type": "Offer", "price": "4.50", "priceCurrency": "USD" }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800;900&display=swap');
+        * { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .glass-card { background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="h-full bg-black text-white antialiased flex items-center justify-center p-0 sm:p-4">
+
+    <!-- CONTAINER -->
+    <div class="w-full max-w-md h-full sm:h-[844px] bg-[#030303] sm:rounded-[50px] overflow-hidden relative border-0 sm:border-8 border-[#1a1a1a] shadow-2xl flex flex-col">
+
+        <!-- HEADER -->
+        <header class="p-6 pb-4 border-b border-white/5 flex items-center justify-between sticky top-0 bg-[#030303]/90 backdrop-blur-md z-30">
+            <a href="index.html" class="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white transition-all active:scale-90">
+                <i class="fas fa-chevron-left text-sm"></i>
+            </a>
+            <div class="text-center">
+                <h1 class="text-base font-black tracking-tight text-white">Digital Menu</h1>
+                <p class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Smart QR Lounge • USD ($)</p>
+            </div>
+            <div class="w-10 h-10"></div>
+        </header>
+
+        <!-- MENU ITEMS SCROLL -->
+        <main class="flex-1 overflow-y-auto p-6 space-y-6">
+
+            <!-- 1. SECTION: COFFEE & TEAS -->
+            <section>
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fas fa-coffee text-amber-400 text-xs"></i>
+                    <h2 class="text-xs font-black uppercase tracking-widest text-white/50">Artisan Coffee & Teas</h2>
+                </div>
+                <div class="space-y-2.5">
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm text-white">Signature Espresso</h3>
+                            <p class="text-[11px] text-white/40 mt-0.5">Rich double shot from our house specialty blend.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$3.50</span>
+                    </div>
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm text-white">Cold Brew Reserve</h3>
+                            <p class="text-[11px] text-white/40 mt-0.5">Slow-steeped for 18 hours for deep flavor.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$4.50</span>
+                    </div>
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <h3 class="font-bold text-sm text-white">Oat Milk Matcha Latte</h3>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">Vegan</span>
+                            </div>
+                            <p class="text-[11px] text-white/40 mt-0.5">Ceremonial Japanese matcha & creamy oat milk.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$5.50</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. SECTION: BAKERY & BREAKFAST -->
+            <section>
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fas fa-bread-slice text-amber-400 text-xs"></i>
+                    <h2 class="text-xs font-black uppercase tracking-widest text-white/50">Fresh Bakery & Breakfast</h2>
+                </div>
+                <div class="space-y-2.5">
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm text-white">Butter Croissant</h3>
+                            <p class="text-[11px] text-white/40 mt-0.5">Freshly baked artisan flaky pastry.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$3.50</span>
+                    </div>
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <h3 class="font-bold text-sm text-white">Avocado Sourdough Toast</h3>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">Vegan</span>
+                            </div>
+                            <p class="text-[11px] text-white/40 mt-0.5">Crushed avocado, radish, chili flakes on sourdough.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$9.00</span>
+                    </div>
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm text-white">Smoked Salmon Bagel</h3>
+                            <p class="text-[11px] text-white/40 mt-0.5">Toasted bagel, whipped cream cheese, capers.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$11.50</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SECTION: TREATS -->
+            <section>
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fas fa-cookie-bite text-amber-400 text-xs"></i>
+                    <h2 class="text-xs font-black uppercase tracking-widest text-white/50">Specialty Treats</h2>
+                </div>
+                <div class="space-y-2.5">
+                    <!-- Item -->
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-start">
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <h3 class="font-bold text-sm text-white">Flourless Chocolate Brownie</h3>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-bold">GF</span>
+                            </div>
+                            <p class="text-[11px] text-white/40 mt-0.5">Rich Belgian dark chocolate, dense & fudgy.</p>
+                        </div>
+                        <span class="font-extrabold text-sm text-emerald-400 ml-3">$4.50</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER BADGE FOR AI AGENTS -->
+        <footer class="p-3 text-center border-t border-white/5 bg-black/40">
+            <span class="text-[10px] text-white/30 flex items-center justify-center gap-1.5 font-medium">
+                <i class="fas fa-robot text-emerald-400"></i> AI-Verified Semantic Data Layer
+            </span>
+        </footer>
+
+    </div>
+
+</body>
+</html>

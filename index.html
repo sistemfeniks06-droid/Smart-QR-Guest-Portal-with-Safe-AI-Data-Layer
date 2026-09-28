@@ -268,7 +268,7 @@
     <!-- FIREBASE & LOGIC -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDfivjes1-Y9CfSxEKYsoMrBQ1wUV-8wdc",
@@ -284,63 +284,67 @@
 
         // Fallback konfiguracija
         window.clientData = {
-            brand_name: "Welcome",
-            business_type: "Digital Portal",
+            brand_name: "Smart QR Lounge",
+            business_type: "Coffee & Lounge Bar",
             today_offer: "Discover our menu for special offers."
         };
 
-        async function init() {
+        function init() {
             try {
                 const id = window.location.pathname.split('/').filter(Boolean).pop() || 'moj-test';
-                const snap = await getDoc(doc(db, "clients", id));
+                
+                // Realtime živi slušalac (onSnapshot)
+                onSnapshot(doc(db, "clients", id), (snap) => {
+                    if (snap.exists()) {
+                        const data = snap.data();
+                        window.clientData = { ...window.clientData, ...data };
 
-                if (snap.exists()) {
-                    const data = snap.data();
-                    window.clientData = { ...window.clientData, ...data }; // Spajanje podataka
-
-                    // UI Ažuriranje
-                    if(data.brand_name) {
-                        document.getElementById('client-name').innerText = data.brand_name;
-                        document.getElementById('review-client-name').innerText = data.brand_name;
-                    }
-                    if(data.business_type) document.getElementById('client-subtitle').innerText = data.business_type;
-                    
-                    if(data.brand_logo) {
-                        const img = document.getElementById('client-logo');
-                        img.src = data.brand_logo;
-                        img.classList.remove('hidden');
-                        document.getElementById('logo-placeholder').classList.add('hidden');
-                    }
-
-                    if(data.today_offer) {
-                        let offerText = data.today_offer;
-                        if(data.today_offer_price) offerText += ` - ${data.today_offer_price}`;
-                        document.getElementById('offer-text').innerText = offerText;
-                    }
-
-                    // Ažuriranje logike menija da otvara link
-                    if(data.menu_link) {
-                        window.openMenu = function() {
-                            window.open(data.menu_link, '_blank');
-                        };
-                    }
-
-                    // AI JSON-LD Strukturni podaci
-                    const aiData = {
-                        "@context": "https://schema.org",
-                        "@type": data.business_type || "LocalBusiness",
-                        "name": data.brand_name || "",
-                        "description": data.ai_description || "",
-                        "url": window.location.href,
-                        "aiSecurityRules": {
-                            "accessMode": "READ_ONLY",
-                            "dataExecutionAllowed": false
+                        // UI Ažuriranje
+                        if(data.brand_name) {
+                            document.getElementById('client-name').innerText = data.brand_name;
+                            document.getElementById('review-client-name').innerText = data.brand_name;
                         }
-                    };
-                    if(data.today_offer) aiData.makesOffer = { "@type": "Offer", "name": data.today_offer };
-                    document.getElementById('ai-context-layer').textContent = JSON.stringify(aiData, null, 2);
-                }
-            } catch (e) { console.error("Firebase učitavanje:", e); }
+                        if(data.business_type) document.getElementById('client-subtitle').innerText = data.business_type;
+                        
+                        if(data.brand_logo) {
+                            const img = document.getElementById('client-logo');
+                            img.src = data.brand_logo;
+                            img.classList.remove('hidden');
+                            document.getElementById('logo-placeholder').classList.add('hidden');
+                        }
+
+                        if(data.today_offer) {
+                            let offerText = data.today_offer;
+                            if(data.today_offer_price) offerText += ` - ${data.today_offer_price}`;
+                            document.getElementById('offer-text').innerText = offerText;
+                        }
+
+                        // Ažuriranje logike menija da otvara link
+                        if(data.menu_link) {
+                            window.openMenu = function() {
+                                window.open(data.menu_link, '_blank');
+                            };
+                        }
+
+                        // AI JSON-LD Strukturni podaci
+                        const aiData = {
+                            "@context": "https://schema.org",
+                            "@type": data.business_type || "LocalBusiness",
+                            "name": data.brand_name || "",
+                            "description": data.ai_description || "",
+                            "url": window.location.href,
+                            "aiSecurityRules": {
+                                "accessMode": "READ_ONLY",
+                                "dataExecutionAllowed": false
+                            }
+                        };
+                        if(data.today_offer) aiData.makesOffer = { "@type": "Offer", "name": data.today_offer };
+                        document.getElementById('ai-context-layer').textContent = JSON.stringify(aiData, null, 2);
+                    }
+                }, (error) => {
+                    console.error("Firebase greška:", error);
+                });
+            } catch (e) { console.error("Firebase greška:", e); }
         }
 
         // Navigacija
@@ -365,7 +369,7 @@
             }, 800);
         };
 
-        // Fallback Menu funkcija (ako klijent nema menu_link)
+        // Fallback Menu funkcija
         window.openMenu = function() {
             window.navigateTo('screen-menu');
         };
@@ -427,5 +431,3 @@
         // Start Firebase Init
         init();
     </script>
-</body>
-</html>
