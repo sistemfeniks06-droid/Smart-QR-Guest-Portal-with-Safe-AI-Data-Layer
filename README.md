@@ -101,7 +101,7 @@ Rather than forcing crawlers to parse complex CSS styles or multi-page user flow
       ]
     }
   ]
-}
+
 ```🛠️ Tech Stack
 Frontend: Vanilla HTML5, Tailwind CSS (via CDN), FontAwesome icons, Canvas Confetti.
 
