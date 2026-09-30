@@ -1,0 +1,71 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Smart QR Lounge Digital Menu Relay",
+  "inLanguage": "English",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Artisan Coffee & Teas",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Signature Espresso",
+          "description": "Rich double shot from our house specialty blend.",
+          "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Cold Brew Reserve",
+          "description": "Slow-steeped for 18 hours for deep, smooth flavor.",
+          "offers": { "@type": "Offer", "price": "4.50", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Oat Milk Matcha Latte",
+          "description": "Ceremonial Japanese matcha paired with creamy organic oat milk.",
+          "suitableForDiet": "https://schema.org/VeganDiet",
+          "offers": { "@type": "Offer", "price": "5.50", "priceCurrency": "USD" }
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Fresh Bakery & Breakfast",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Butter Croissant",
+          "description": "Freshly baked artisan flaky pastry.",
+          "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Avocado Sourdough Toast",
+          "description": "Crushed avocado, radish, chili flakes, sea salt on sourdough.",
+          "suitableForDiet": "https://schema.org/VeganDiet",
+          "offers": { "@type": "Offer", "price": "9.00", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Smoked Salmon Bagel",
+          "description": "Toasted bagel, whipped cream cheese, capers, fresh dill.",
+          "offers": { "@type": "Offer", "price": "11.50", "priceCurrency": "USD" }
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Specialty Treats",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Flourless Chocolate Brownie",
+          "description": "Rich Belgian dark chocolate, dense & fudgy.",
+          "suitableForDiet": "https://schema.org/GlutenFreeDiet",
+          "offers": { "@type": "Offer", "price": "4.50", "priceCurrency": "USD" }
+        }
+      ]
+    }
+  ]
+}
