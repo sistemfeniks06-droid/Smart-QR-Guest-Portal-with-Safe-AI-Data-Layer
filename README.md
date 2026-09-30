@@ -76,7 +76,8 @@ To ensure mobile AI agents can accurately process venue information without risk
     "priceCurrency": "USD"
   }
 }
-```2. Dedicated Menu Relay Protocol (menu-relay.json)
+```
+2. Dedicated Menu Relay Protocol (menu-relay.json)
 Rather than forcing crawlers to parse complex CSS styles or multi-page user flows, AI agents are directed via standard <link rel="alternate" type="application/json"> and hasMenu attributes to menu-relay.json. This allows agents like Google Gemini to instantly answer conversational queries (e.g., "How much is a Cold Brew?", "Do you have vegan options?") with zero guesswork.
 ```{
   "@context": "https://schema.org",
@@ -102,7 +103,8 @@ Rather than forcing crawlers to parse complex CSS styles or multi-page user flow
     }
   ]
 
-```🛠️ Tech Stack
+```
+🛠️ Tech Stack
 Frontend: Vanilla HTML5, Tailwind CSS (via CDN), FontAwesome icons, Canvas Confetti.
 
 Backend & Database: Firebase Firestore (NoSQL for dynamic tenant routing), Firebase Hosting.
